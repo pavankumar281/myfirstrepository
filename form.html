@@ -1,0 +1,202 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>servey Forms</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <h1> User personal Information </h1>
+            <label for="name"> Enter your full Name:</label>
+            <input type="text" id="name" requeried><br>
+            
+
+            <label for="email"> Enter your email
+            </label>
+            <input type="email"id="email" requeried/><br>
+            
+
+            <label for="password">Enter your password</label>
+            <input type="password"id="password" requeried/><br>
+            
+        </fieldset>
+    </form>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffdd00;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    form {
+      background-color: #000000;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgb(243, 0, 0);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    fieldset {
+      border: none;
+      padding: 0;
+    }
+
+    legend h1 {
+      text-align: center;
+      color: #d91220e2;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #70c218;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .gender-group {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .gender-group label {
+      margin-top: 0;
+      font-weight: normal;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      background-color: #10d7ff;
+      color: white;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #ff0000;
+    }
+
+    center {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+    <form>
+
+        <fieldset>
+
+            <legend><h1>User Personal Information</h1></legend>
+
+            <label for="name">Enter Your Full Name:</label>
+
+            <input type="text" id="name" placeholder="Enter Your Name" required />
+
+            <br>
+
+            <label for="email">Enter Your Email:</label>
+
+            <input type="email" id="email" placeholder="Enter Your Email" />
+
+            <br>
+
+            <label for="password">Enter Your password:</label>
+
+            <input type="password" id="password" placeholder="Enter Your Password" />
+
+            <br>
+
+            <label for="confirmpassword">Confirm Your Password:</label>
+
+            <input type="password" id="confirmpassword" placeholder="Confirm Your Password" required />
+
+            <br>
+
+            <label for="country">Select Your country:</label>
+
+            <select name="country" id="country">
+
+                <option value="options">options</option>
+
+                <option value="India">India</option>
+
+                <option value="USA">USA</option>
+
+                <option value="Canada">Canada</option>
+
+                <option value="America">America</option>
+
+            </select>
+
+            <br>
+            <label for="phone">Enter Your Phone Number:</label>
+            <input type="tel" id="phone" pattern="[0-9][10]" placeholder="Enter Your Phone Number" required />
+            <br>
+            <label>Enter Your Gender:</label>
+            <div class="gender-group">
+                <input type="radio" name="gender" id="male" value="male" required />
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="female" required />
+                <label for="female">Female</label>
+                <input type="radio" name="gender" id="others" value="others" required />
+                <label for="others">Others</label>
+            </div>
+            <br>
+            <label for="dob">Enter Your Date Of Birth:</label>
+            <input type="date" id="dob" required />
+            <br>
+            <label for="address">Enter Your Address:</label>
+            <textarea type="address" id="address" placeholder="Enter Your Address" required /></textarea>
+            <br>
+            <center><input type="submit" value="submit" /></center>
+            <br>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+
