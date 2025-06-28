@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reset Form Example</h1>
+    <p>This is Example demonstrate how to reset from using javascript</p>
+    <form id="myForm">
+    <input type="textInput" placeholder="Type Somthing.....">
+    <button type="reset">Reset</button>
+    </form>
+    <script>
+        let form = document.getElementById("myForm");
+        let input = document.getElementById("textInput");
+            form.addEventListener("reset ",function(){
+                input.value="";
+
+            })
+    </script>
+</body>
+</html>
