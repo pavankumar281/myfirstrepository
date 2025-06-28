@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" style="width: 100px; height: 100px; background-color: lightskyblue;"></div>
+<script>
+    let box = document.getElementById("box");
+    box.addEventListener("mouseenter",
+    function(){
+box.style.backgroundColor = "lightcoral";
+    });
+    box.addEventListener("mouseleave", function(){
+        box.style.backgroundColor = "lightskyblue";
+    })
+</script>
+</body>
+</html>
