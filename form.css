@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #333c43df;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-heading {
+  font-size: 35px;
+  color: rgb(27, 13, 13);
+}
+
+.student-form {
+  background-color: #8f6e8f;
+  padding: 65px;
+  width: 700px;
+  
+}
+
+.student-form label {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-style: oblique;
+  color: black;
+}
+
+.student-form input {
+  width: 100%;
+  padding:15px;
+  border-radius:15px;
+  
+}
+
+.student-form button {
+  margin-top: 20px;
+  width: 50%;
+  padding: 20px;
+  background-color: #02130db0;
+  color: white;
+  font-size:20px;
+  border-radius:15px;
+  text-align: center;
+}
+
+.student-form button:hover {
+  background-color: #000000;
+}
