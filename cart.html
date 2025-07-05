@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart - AJIO</title>
+  <style>
+    /* Add your CSS styling here */
+    .cart-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .cart-item img {
+      width: 100px;
+      height: 100px;
+      margin-right: 10px;
+    }
+    .item-details {
+      display: flex;
+      flex-direction: column;
+    }
+    .item-details h3 {
+      margin: 0;
+    }
+    .item-details p {
+      margin: 5px 0;
+    }
+    .quantity-input {
+      width: 50px;
+      margin-right: 10px;
+    }
+    .remove-btn {
+      padding: 5px 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .cart-summary {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .checkout-btn {
+      padding: 10px 20px;
+      background-color: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your Shopping Cart</h1>
+  </header>
+
+  <main class="cart-container">
+    <div id="cart-items"></div>
+    <div class="cart-summary">
+      <h2>Total: ₹<span id="total-price">0</span></h2>
+      <button class="checkout-btn" id="checkout-btn">Checkout</button>
+    </div>
+  </main>
+
+  <script>
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalPriceElement = document.getElementById('total-price');
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+
+
+    let cart = [];
+
+    function updateCart() {
+      cartItemsContainer.innerHTML = '';
+      let total = 0;
+
+      cart.forEach(item => {
+        const itemTotal = item.quantity * item.product.price;
+        total += itemTotal;
+
+        const cartItemDiv = document.createElement('div');
+        cartItemDiv.classList.add('cart-item');
+        cartItemDiv.innerHTML = `
+          <img src="${item.product.image}" alt="Product Image">
+          <div class="item-details">
+            <h3>${item.product.name}</h3>
+            <p>Price: ₹${item.product.price}</p>
+            <input type="number" value="${item.quantity}" min="1" class="quantity-input" data-id="${item.product.id}">
+            <button class="remove-btn" data-id="${item.product.id}">Remove</button>
+          </div>
+        `;
+        cartItemsContainer.appendChild(cartItemDiv);
+      });
+
+      totalPriceElement.textContent = total;
+    }
+
+    function addToCart(productId) {
+      const existingItem = cart.find(item => item.product.id === productId);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        const product = products.find(p => p.id === productId);
+        cart.push({ product, quantity: 1 });
+      }
+      updateCart();
+    }
+
+    function removeFromCart(productId) {
+      const itemIndex = cart.findIndex(item => item.product.id === productId);
+      if (itemIndex !== -1) {
+        cart.splice(itemIndex, 1);
+        updateCart();
+      }
+    }
+
+    function handleQuantityChange(event) {
+      const productId = parseInt(event.target.dataset.id);
+      const newQuantity = parseInt(event.target.value);
+      const item = cart.find(item => item.product.id === productId);
+      if (item) {
+        item.quantity = newQuantity;
+        updateCart();
+      }
+    }
+
+    function handleRemoveButtonClick(event) {
+      const productId = parseInt(event.target.dataset.id);
+      removeFromCart(productId);
+    }
+
+    cartItemsContainer.addEventListener('click', event => {
+      if (event.target.classList.contains('remove-btn')) {
+        handleRemoveButtonClick(event);
+      }
+    });
+
+    cartItemsContainer.addEventListener('input', event => {
+      if (event.target.classList.contains('quantity-input')) {
+        handleQuantityChange(event);
+      }
+    });
+
+    checkoutBtn.addEventListener('click', () => {
+      alert('Proceeding to checkout...');
+    });
+
+    // Example: Adding products to the cart
+    addToCart(1);
+  </script>
+</body>
+</html>
