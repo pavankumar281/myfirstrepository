@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background: #111;
+    color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .quiz-container {
+    width: 90%;
+    max-width: 600px;
+    background: #d17878;
+    padding: 200px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+  .timer-bar {
+    width: 70%;
+    height: 8px;
+    background: #3d1b05;
+    overflow: hidden;
+    margin: 0 10px;
+    border-radius: 5px;
+  }
+  
+  #timer-fill {
+    height: 100%;
+    background: rgb(255, 0, 0);
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 1s linear;
+  }
+  
+  #question-text {
+    font-size: 20px;
+    margin: 20px 0;
+    color:black;
+    
+  }
+  
+  #options {
+    text-align: left;
+    margin: 15px 0;
+  }
+  
+  .option {
+    background: #000000;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .option input[type="radio"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .option input[type="radio"]:checked {
+    background: rgb(12, 176, 222);
+    border-color: rgb(16, 216, 199);
+  }
+  
+  .option.correct {
+    background: #2e7d32;
+  }
+  
+  .option.incorrect {
+    background: #c62828;
+  }
+  
+  button {
+    background: rgb(8, 112, 67);
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal.hidden {
+    display: none;
+  }
+  
+  .modal-content {
+    background: #000;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+  }
+
+  
+  #leaderboard {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 10px 0;
+  }
+  

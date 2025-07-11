@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App - 10M</title>
+  <link rel="stylesheet" href="quiz.css"/>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1> Quiz Master - 10M</h1>
+    <div id="question-box">
+      <div class="question-header">
+        <span id="question-number">Q1</span>
+        <div class="timer-bar"><div id="timer-fill"></div></div>
+        <span id="timer">20</span>
+      </div>
+      <div id="question-text"></div>
+      <div id="options"></div>
+      <button onclick="nextQuestion()">Next</button>
+    </div>
+  </div>
+
+  <div id="result-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Your Score: <span id="score"></span>/15</h2>
+      <div id="stars"></div>
+      <h3> WINNER</h3>
+      <ul id="WINNER"></ul>
+      <button onclick="restartQuiz()">Try Again</button>
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
