@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    {% for Student in Student_list %}
+    <div>
+
+       <a href="{% url 'details' slug=Student.slug %}">{{ Student.name }}</a>
+<h2>{{ Student.name }}</h2>
+    <h2>
+        Roll No: {{Student.rollno}}
+    </h2>
+    </div>
+    {% endfor %}
+    
+</body>
+</html>
